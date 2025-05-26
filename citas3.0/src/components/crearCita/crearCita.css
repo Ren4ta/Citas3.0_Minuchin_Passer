@@ -1,0 +1,42 @@
+.lista-citas .media {
+    border-bottom: 1px solid #e1e1e1;
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .lista-citas .media:last-of-type {
+    border-bottom: none;
+  }
+  
+  .lista-citas .media-body p {
+    margin: 0;
+  }
+  
+  .lista-citas .media-body button {
+    margin-top: 1rem;
+  }
+  
+  .lista-citas .media-body span {
+    font-weight: bold;
+  }
+  
+  label {
+    color: white;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input[type="date"],
+  input[type="time"],
+  input[type="text"],
+  textarea {
+    width: 100%;
+    height: 38px;
+    padding: 6px 10px;
+    background-color: #fff;
+    border: 1px solid #D1D1D1;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
