@@ -10,7 +10,12 @@ function App() {
   useEffect(() => {
     const citasGuardadas = localStorage.getItem('citas');
     if (citasGuardadas) {
-      setCitas(JSON.parse(citasGuardadas));
+      try {
+        setCitas(JSON.parse(citasGuardadas));
+      } catch (error) {
+        console.error("Error al cargar citas desde localStorage:", error);
+        localStorage.removeItem('citas'); // Limpia datos corruptos
+      }
     }
   }, []);
 
@@ -40,12 +45,11 @@ function App() {
           <h2>Formulario</h2>
           <CrearCita crearCita={agregarCita} />
         </div>
-        
         <div className="listado">
           <h2>Listado</h2>
           {citas.map((cita) => (
             <div key={cita.id} className="cita">
-              <TarjetaCita 
+              <TarjetaCita
                 id={cita.id}
                 nombre={cita.nombre}
                 dueño={cita.dueño}
